@@ -34,7 +34,7 @@ export class ShoppingCart {
         }
         this._orderStatus = "closed";
         this.sendMessage(
-            `Seu pedido com total de ${this.total()} foi recebido.`,
+            `Your order with total ${this.total()} it was received.`,
         );
         this.saveOrder();
         this.clear();
@@ -44,24 +44,15 @@ export class ShoppingCart {
     }
 
     sendMessage(msg: string): void {
-        console.log("Mensagem enviada:", msg);
+        console.log("Message sent:", msg);
     }
 
     saveOrder(): void {
-        console.log("Pedido salvo com sucesso...");
+        console.log("Order saved successfully.");
     }
 
     clear(): void {
-        console.log("Carrinho de compras foi limpo :)");
+        console.log("Shopping cart has been cleaned :)");
         this._items.length = 0;
     }
 }
-
-const shoppingCart = new ShoppingCart();
-shoppingCart.addItem({ name: "Apple", price: 2.99 });
-shoppingCart.addItem({ name: "Banana", price: 0.99 });
-shoppingCart.addItem({ name: "Orange", price: 5.99 });
-
-console.log(shoppingCart.items);
-console.log(shoppingCart.total());
-shoppingCart.checkout();
