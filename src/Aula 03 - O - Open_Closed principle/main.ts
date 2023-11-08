@@ -3,10 +3,16 @@ import { Messaging } from "./entities/services/messaging";
 import { Order } from "./entities/order-status";
 import { Persistency } from "./entities/services/persistency";
 import { Products } from "./entities/product";
-import { FiftyPercentDiscount } from "./entities/interfaces/discount";
+import {
+    FiftyPercentDiscount,
+    NoDiscount,
+    TenPercentDiscount,
+} from "./entities/interfaces/discount";
 
-const fiftyPercentDiscount = new FiftyPercentDiscount();
-const shoppingCart = new ShoppingCartS(fiftyPercentDiscount);
+// const tenPercentDiscount = new TenPercentDiscount();
+// const fiftyPercentDiscount = new FiftyPercentDiscount();
+const noDiscount = new NoDiscount();
+const shoppingCart = new ShoppingCartS(noDiscount);
 const message = new Messaging();
 const persistency = new Persistency();
 const order = new Order(shoppingCart, message, persistency);
