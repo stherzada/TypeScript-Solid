@@ -10,6 +10,7 @@ import {
     NoDiscount,
     TenPercentDiscount,
 } from "./entities/interfaces/discount";
+import { IndividualCustomer } from "./entities/customer";
 
 // const tenPercentDiscount = new TenPercentDiscount();
 // const fiftyPercentDiscount = new FiftyPercentDiscount();
@@ -17,7 +18,13 @@ const noDiscount = new NoDiscount();
 const shoppingCart = new ShoppingCartS(noDiscount);
 const message = new Messaging();
 const persistency = new Persistency();
-const order = new Order(shoppingCart, message, persistency);
+
+const IndividualCustomer = new IndividualCustomer(
+    "Sther",
+    "ALVES",
+    "111.111.111.11",
+);
+const order = new Order(shoppingCart, message, persistency, customer);
 
 shoppingCart.addItem(new Products("Apple", 2.99));
 shoppingCart.addItem(new Products("Banana", 2.99));
