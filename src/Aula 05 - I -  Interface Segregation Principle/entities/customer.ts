@@ -39,6 +39,7 @@ export class EnterpriseCustomer
     getName(): string {
         return this.firstName;
     }
+
     getIDM(): string {
         return this.cnpj;
     }

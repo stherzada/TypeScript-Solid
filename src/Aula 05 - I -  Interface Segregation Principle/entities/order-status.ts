@@ -28,6 +28,7 @@ export class Order {
         );
         this.persistency.saveOrder();
         this.cart.clear();
+
         console.log(
             "o cliente é",
             this.customer.getName(),
