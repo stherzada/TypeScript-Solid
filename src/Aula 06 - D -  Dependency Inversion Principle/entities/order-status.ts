@@ -1,15 +1,15 @@
-import { ShoppingCartS } from "./CartShopping";
 import { CustomerOrder } from "./interfaces/customer-protocol";
+import { MessagingProtocol } from "./interfaces/messaging-protocol";
 import { OrderStatus } from "./interfaces/order-status";
-import { Messaging } from "./services/messaging";
-import { Persistency } from "./services/persistency";
+import { PersistencyProtocol } from "./interfaces/persistency-protocol";
+import { ShoppingCartProtocol } from "./interfaces/shopping-cart-protocol";
 
 export class Order {
     private _orderStatus: OrderStatus = "open";
     constructor(
-        private readonly cart: ShoppingCartS,
-        private readonly message: Messaging,
-        private readonly persistency: Persistency,
+        private readonly cart: ShoppingCartProtocol,
+        private readonly message: MessagingProtocol,
+        private readonly persistency: PersistencyProtocol,
         private readonly customer: CustomerOrder,
     ) {}
 
@@ -30,7 +30,7 @@ export class Order {
         this.cart.clear();
 
         console.log(
-            "o cliente é",
+            "Client is",
             this.customer.getName(),
             this.customer.getIDM(),
         );

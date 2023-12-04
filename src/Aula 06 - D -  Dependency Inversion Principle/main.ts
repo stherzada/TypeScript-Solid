@@ -25,6 +25,11 @@ const individualCustomer = new IndividualCustomer(
     "111.111.111.11",
 );
 
+// const individualCustomer = new EnterpriseCustomerr(
+//     "Empresa incrível!",
+//     "121542024512415",
+// );
+
 const enterpriseCustomer = new EnterpriseCustomer("Empresa big", "56565654645");
 const order = new Order(shoppingCart, message, persistency, individualCustomer);
 
