@@ -11,6 +11,7 @@ import {
     TenPercentDiscount,
 } from "./entities/interfaces/discount";
 import { EnterpriseCustomer, IndividualCustomer } from "./entities/customer";
+import { MessagingProtocol } from "./entities/interfaces/messaging-protocol";
 
 // const tenPercentDiscount = new TenPercentDiscount();
 // const fiftyPercentDiscount = new FiftyPercentDiscount();
@@ -29,6 +30,12 @@ const individualCustomer = new IndividualCustomer(
 //     "Empresa incrível!",
 //     "121542024512415",
 // );
+
+class MessagingMock implements MessagingProtocol {
+    sendMessage(msg: string): void {
+        console.log("A mensagem foi enviada p");
+    }
+}
 
 const enterpriseCustomer = new EnterpriseCustomer("Empresa big", "56565654645");
 const order = new Order(shoppingCart, message, persistency, individualCustomer);
